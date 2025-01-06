@@ -78,15 +78,22 @@ vim.cmd [[
 
 -- Diagnostics display settings
 vim.diagnostic.config({
-	virtual_text = false, -- Use signs instead of inline messages
-	signs = true,
-	update_in_insert = false,
-	severity_sort = true,
+    virtual_text = false, -- Use signs instead of inline messages
+    signs = true,
+    update_in_insert = false,
+    severity_sort = true,
 })
 
 -- Customize diagnostic signs
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
-	local hl = "DiagnosticSign" .. type
-	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
+
+
+-- Make the floating terminal and border match the theme
+vim.cmd([[
+  highlight Normal guibg=NONE ctermbg=NONE
+  highlight FloatBorder guifg=#a9b1d6 guibg=NONE
+]])

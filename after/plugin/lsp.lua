@@ -131,3 +131,12 @@ require("rust-tools").setup({
 
 -- LSP status indicator
 require('fidget').setup({})
+
+-- Floating Terminal Autocompletion
+cmp.setup.buffer({
+    sources = {
+        { name = 'buffer' },
+        { name = 'path' },
+    },
+})
+
