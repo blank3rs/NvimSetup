@@ -18,7 +18,6 @@ return require('packer').startup(function(use)
         run = ':TSUpdate'
     }
 
-
     -- Harpoon for file navigation
     use 'theprimeagen/harpoon'
 
